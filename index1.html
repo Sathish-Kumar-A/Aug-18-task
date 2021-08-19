@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>euro-spanish</title>
+</head>
+<body>
+    <script>
+        let result=[];
+        const spanish=fetch("https://restcountries.eu/rest/v2/lang/spa")
+        .then((data)=>data.json())
+        .then((countries)=>{
+            for(var x of countries){
+                if(x.region=="Europe"){
+                    result.push(x);
+                }
+            }
+            console.log(result);
+        })
+    </script>
+</body>
+</html>
